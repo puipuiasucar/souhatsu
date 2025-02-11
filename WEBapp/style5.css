@@ -1,0 +1,91 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #87CEEB;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+}
+.legend {
+    margin: 10px 0; /* 全体の余白を小さめに調整 */
+    display: flex;
+    justify-content: center; /* 中央寄せを維持 */
+    align-items: center;
+    gap: 20px; /* アイテム間の間隔を小さくする */
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 10px; /* 各アイテムの左右余白を狭くする */
+}
+.legend-item span {
+    margin-left: 12px; /* 丸と文字の間隔を広げる */
+    font-size: 16px;
+}
+  
+  .circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .blue {
+    background-color: #77c0e6;
+  }
+  
+  .dark {
+    background-color: #2f2f3f;
+  }
+  
+  .light {
+    background-color: #d9d9d9;
+  }
+main {
+    padding: 50px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+main {
+    padding: 20px;
+    display: flex; /* フレックスボックスを使用 */
+    flex-direction: column; /* 子要素を縦に並べる */
+    align-items: center; /* 水平方向に中央揃え */
+    height: calc(100vh - 160px); /* ビューポートの高さを基に調整（ヘッダーとフッターの高さを除く） */
+}
+
+.button1 {
+    display: inline-block;
+    margin: 10px;
+    padding: 15px 25px;
+    font-size: 25px;
+    color: white;
+    background-color: #87CEEB;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    width: 250px; /* ボタンの幅を固定 */
+    box-sizing: border-box; /* パディングを幅に含める */
+}
+
+.button1:hover {
+    background-color: #87CEEB;
+}
+
+

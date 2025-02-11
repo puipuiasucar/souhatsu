@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+header {
+    background-color: #87CEEB;
+    padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
+    color: white;
+    font-size: 2rem;
+}
+
+main {
+    padding: 50px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+.umbrella-box {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    grid-gap: 50px; /* グリッドアイテムの間隔を増やす */
+    justify-content: center;
+    margin: 100px auto;
+    padding: 50px;
+    border: 2px solid #000;
+    width: 300px;
+}
+
+.umbrella-slot {
+    width: 120px;
+    height: 120px;
+    background-color: #87CEEB;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%; /* 丸形のための半径 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}

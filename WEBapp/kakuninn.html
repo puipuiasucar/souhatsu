@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>傘立て状況確認</title>
+  <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>傘立て状況確認</h1>
+    </header>
+    <main>
+      <div class="legend">
+        <div class="legend-item">
+          <span class="circle blue"></span>
+          <span>あなたの傘</span>
+        </div>
+        <div class="legend-item">
+          <span class="circle dark"></span>
+          <span>使用中</span>
+        </div>
+        <div class="legend-item">
+          <span class="circle light"></span>
+          <span>空いています</span>
+        </div>
+      </div>
+        <div class="umbrella-box">
+            <div class="umbrella-slot"></div>
+            <div class="umbrella-slot"></div>
+            <div class="umbrella-slot"></div>
+            <div class="umbrella-slot"></div>
+          </div>
+      </div>
+    </main>
+    <main>
+        <footer>
+            <button class="home-button" onclick="location.href='index.html'">ホームに戻る</button>
+          </footer>
+    </main>
+  </div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.7/push.min.js"></script>
+  <script type="text/javascript" src="common.js"></script>
+  <script>
+    (async () => {
+      const id = await getID();
+      const statusResponse = await fetch("/KasaStatus", { method: "POST" });
+      const status = await statusResponse.json();
+      const slots = [...document.querySelectorAll(".umbrella-slot")];
+      for (let i = 0; i < 4; ++i) {
+        if (status[i] == id) {
+          slots[i].classList.add("blue");
+        }
+        else if (status[i] == 0) {
+          slots[i].classList.add("light");
+        }
+        else {
+          slots[i].classList.add("dark");
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
