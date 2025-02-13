@@ -48,19 +48,25 @@
     </header>
     
     <main>
-        <button onclick="test()">test</button>
         <section id="register">
             <a href="kasatouroku.html" class="button1">傘登録</a>
         </section>
         <section id="status">
             <a href="kakuninn.html" class="button1">傘立て状況確認</a>
         </section>
+        <button id="permission" class="button1">通知と位置情報の取得を許可</button>
     </main>
     <footer>
         <p>© 2024 アンブレ忘れんボー</p>
     </footer>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/push.js/1.0.7/push.min.js"></script>
     <script type="text/javascript" src="common.js"></script>
+    <script>
+        document.getElementById("permission").addEventListener("click", () => {
+            Push.Permission.request();
+            navigator.geolocation.getCurrentPosition(() => {});
+        });
+    </script>
 </body>
 </html>
 
